@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ticMain {
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 0.5rem;
+    cursor: none;
+    
+}
+
+.ticMain h1 {
+    font-size: 35px;
+    margin-bottom: 1.5rem;
+}
+
+.ticMain table {
+    align-items: center;
+    border: 1px solid white;
+    /* margin: 3% 0% 2% 36.3%; */
+    margin: 0 auto;
+}
+
+.ticMain table td {
+    border: 1px solid white;
+    width: 90px;
+    height: 90px;
+    font-size: 45px;
+    /* cursor: pointer; */
+    color: aquamarine;
+    cursor: none;
+}
+
+.ticMain .winDeclare {
+    background-color: aquamarine;
+    position: fixed;
+    margin: 1rem 0rem 0rem 0.7rem;
+    /* width: 25%; */
+    /* height: 54%; */
+    padding: 1.3rem 1.8rem;
+    color: black;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.ticMain .winDeclare h1 {
+    margin-bottom: 3rem;
+    font-size: 30px;
+}
+
+.ticMain .winDeclare h3 {
+    font-size: 28px;
+}
+
+.ticMain .winDeclare button {
+    background-color: black;
+    color: aquamarine;
+    font-size: 16px;
+    margin-top: 2rem;
+}
+
+.ticMain h2 {
+    margin-top: 1.5rem;
+    font-size: 20px;
+}
+
+.ticMain button {
+    margin: 1rem 0rem 1rem 0rem;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    cursor: pointer;
+    color: black;
+}
+
+.ticMain .cursor {
+    font-size: 40px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transition: 0s linear;
+    pointer-events: none;
+}
+
+.ticMain p {
+    font-size: 13px;
+    /* font-weight: 300; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ticMain p span {
+    color: rgba(255, 255, 255, 0.781);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 400px) and (min-width: 200px) {
+
+    .ticMain {
+        padding: 2rem 1rem 0rem 1rem;
+    }
+
+    .ticMain h1 {
+        margin-bottom: 2rem;
+    }
+
+    .ticMain .winDeclare {
+        margin: 1rem 0rem 0rem 0.8rem;
+        /* width: 70%; */
+        /* height: 40%; */
+        padding: 2.5rem 2.7rem 1rem 2.5rem;
+    }
+
+    .ticMain .winDeclare h1 {
+        font-size: 30px;
+    }
+
+    .ticMain .winDeclare h3 {
+        font-size: 28px;
+    }
+
+    .ticMain .winDeclare button {
+        font-size: 15px;
+    }
+
+    .ticMain table td {
+       width: 100px;
+       height: 100px;
+       cursor: pointer;
+    }
+
+    .ticMain h2 {
+        margin-top: 2rem;
+    }
+
+    .ticMain button {
+        margin-bottom: 1.8rem;
+    }
+
+    .ticMain .cursor {
+        display: none;
+    }
+
+    .ticMain p {
+        font-weight: 300;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+} 
+    
