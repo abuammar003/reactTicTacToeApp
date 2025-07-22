@@ -165,7 +165,7 @@ function TicTacToe() {
         </tbody>
       </table>
       {winner ? <h2>Winner: {winner}</h2> : <h2>Next Move: {move}</h2>}
-      <button onClick={handleReload}> New Game </button>
+      <button onClick={handleReload} className="newGame"> New Game </button>
       <p>
         @2024 Copyright : <span>AmmarShah</span>{" "}
       </p>
