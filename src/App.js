@@ -9,9 +9,8 @@ function App() {
   return (
     <div>
       <Router>
-        <TicNav />
+          <TicNav />
         <Routes>
-        
           <Route path='/' element ={ <TicTacToe /> } />
           <Route path='/Player-vs-Computer' element ={ <TicUserVsComp /> } />
         </Routes>

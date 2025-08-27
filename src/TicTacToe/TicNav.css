@@ -5,7 +5,8 @@
 }
 
 .ticNav {
-    background-color: rgb(41, 114, 90);
+    /* background-color: rgb(41, 114, 90); */
+    background-color: red;
     color: white;
     position: fixed;
     padding: 0.5rem;
