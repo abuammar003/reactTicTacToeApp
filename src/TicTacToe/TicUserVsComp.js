@@ -3,7 +3,6 @@
 
  import React, { useEffect, useState } from "react";
 import "./TicUserVsComp.css";
-import TicNav from "./TicNav";
 
 function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -92,7 +91,6 @@ useEffect(() => {
 
   return (
     <div className="ticMain">
-        <TicNav />
 
       <div
         className="cursor"

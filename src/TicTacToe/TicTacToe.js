@@ -1,6 +1,5 @@
 import React, { useEffect, useState  } from "react";
 import "./TicTacToe.css";
-import TicNav from "./TicNav";
 
 function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -82,7 +81,6 @@ function TicTacToe() {
   return (
 
     <div className="ticMain">
-        <TicNav />
       <div
         className="cursor"
         style={{ top: `${screen.y}px`, left: `${screen.x}px` }}
