@@ -6,29 +6,31 @@
 
 .ticNav {
     background-color: rgb(41, 114, 90);
-    /* background-color: red; */
     color: white;
     position: fixed;
-    padding: 0.5rem;
+    padding: 0.8rem 1rem;
     margin: 0.4rem 0.3rem;
     cursor: pointer;
     border-radius: 20px;
+    z-index: 1000;
 }
-.ticNav {
-    .cursor {
-        display: none;
-    }
-}
+
 
 .ticNav ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 .ticNav ul li {
     border-bottom: 1px solid black;
-    padding: 10px;
-    font-size: 17px;
+    padding: 10px 0px;
+    font-size: 16px;
     font-weight: 600;
     color: black;
+    cursor: pointer;
+}
+.navLink {
+  margin-top: 10px;
 }
 
 .ticNav #ticMenu {
