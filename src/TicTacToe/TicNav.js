@@ -20,10 +20,10 @@ const TicNav = () => {
     {showNav && 
           <div className='navLink'>
             {/* <li > <Link to={"/Player1 vs Player2"}>Player1 vs Player2</Link> </li> */}
-                <Link to={"/Player1 vs Player2"}>
+                <Link to={"/"}>
             <li > Player1 vs Player2 </li>
                 </Link> 
-                <Link to={"/Player vs Computer"}>
+                <Link to={"/Player-vs-Computer"}>
             <li > Player vs Computer</li>
                 </Link>
             <li>Restart</li>

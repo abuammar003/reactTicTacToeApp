@@ -10,10 +10,10 @@ function App() {
     <div>
       <Router>
         <TicNav />
-        {/* <TicTacToe /> */}
         <Routes>
-          <Route path='/Player1 vs Player2' element ={ <TicTacToe /> } />
-          <Route path='/Player vs Computer' element ={ <TicUserVsComp /> } />
+        
+          <Route path='/' element ={ <TicTacToe /> } />
+          <Route path='/Player-vs-Computer' element ={ <TicUserVsComp /> } />
         </Routes>
       </Router>
     </div>
