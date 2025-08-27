@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState  } from "react";
 import "./TicTacToe.css";
-import { useState } from "react";
+import TicNav from "./TicNav";
 
 function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(""));
   const [move, setMove] = useState("X");
   const [winner, setWinner] = useState(null);
+  const [score , setScore] = useState({player1:0, player2:0});
+
 
   function handleReload() {
     setBoard(Array(9).fill(""));
@@ -24,7 +26,10 @@ function TicTacToe() {
 
     if (checkWinner(square)) {
       setWinner(move);
-    } else {
+      updateScore(move);
+    }else if (square.every((cell) => cell !=="")){
+      setWinner("Draw")
+    }else {
       setMove(move === "X" ? "O" : "X");
     }
   }
@@ -53,7 +58,17 @@ function TicTacToe() {
     x: "",
     y: "",
   });
-  console.log(screen);
+  // console.log(screen);
+
+  function updateScore(result) {
+    if(result === "X") {
+      setScore((prev)=> ({...prev, player1: prev.player1 + 1 }));
+    } else if (result === "O") {
+      setScore((prev) => ({...prev, player2: prev.player2 + 1}));
+    }
+  }
+
+
   useEffect(() => {
     const mouseMove = (e) => {
       setScreen({ x: e.clientX, y: e.clientY });
@@ -62,8 +77,12 @@ function TicTacToe() {
     return () => document.removeEventListener("mousemove", mouseMove);
   }, []);
 
+
+
   return (
+
     <div className="ticMain">
+        <TicNav />
       <div
         className="cursor"
         style={{ top: `${screen.y}px`, left: `${screen.x}px` }}
@@ -71,13 +90,20 @@ function TicTacToe() {
         {move}
       </div>
       <h1>Tic Tac Toe</h1>
+ 
+        <div className="winScore">
+            <h3 className="player1">Player1 <br/> <span >{score.player1}</span></h3>
+            <h1>Vs</h1>
+            <h3 className="player2">Player2 <br/> <span >{score.player2}</span></h3>
+        </div>
+
 
       <table>
         <tbody>
           {winner ? (
             <div className="winDeclare">
               <h1> Congratultion! </h1>
-              <h3>Winner: {winner}</h3>
+              <h3>Winner: {winner === "Draw" ? "It's Draw" : `Winner: ${winner}`}</h3>
               <button onClick={handleReload}>New Game</button>
             </div>
           ) : (
@@ -174,5 +200,7 @@ function TicTacToe() {
 }
 
 export default TicTacToe;
+
+
 
 

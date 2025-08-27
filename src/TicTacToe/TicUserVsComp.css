@@ -12,14 +12,46 @@
     height: 100vh;
     padding-top: 0.5rem;
     cursor: none;
-    position: relative;    
+    position: relative;
+    
 }
 
+.ticMain .ticNav {
+    background-color: aquamarine;
+    color: white;
+}
 
 .ticMain h1 {
     font-size: 35px;
     margin-bottom: 1.5rem;
 }
+
+.ticMain .winScore {
+    width: 18rem;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+}
+.winScore h3{
+    margin: 0 auto;
+    font-size: 22px;
+}
+.winScore h3 span {
+    font-size: 28px;
+}
+
+.userScore {
+    color: aquamarine;
+}
+
+.comScore {
+    color: red;
+}
+
+.winScore h1 {
+    margin-top: 5px;
+}
+
 
 .ticMain table {
     align-items: center;
@@ -45,12 +77,13 @@
     background-color: aquamarine;
     position: fixed;
     margin: 0.8rem 0rem 0rem 0.28rem;
-    /* width: 25%; */
-    /* height: 54%; */
     padding: 1.3rem 1rem;
     color: black;
     text-align: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 10px;
     cursor: pointer;
 }
