@@ -44,12 +44,18 @@
 
 .userScore {
     color: #7fffd4;
-    font-size: 26px;
-   
+    font-size: 38px;
+    border: 2px solid #7fffd4;
+    border-radius: 50%;
+    padding: 2px 5px;
 }
 .comScore {
     color: red;
-    font-size: 26px;
+    font-size: 38px;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 2px 5px;
+
 }
 
 .winScore h1 {
