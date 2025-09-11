@@ -5,7 +5,8 @@
 }
 
 .ticNav {
-    background-color: rgb(41, 114, 90);
+    /* background-color: rgb(41, 114, 90); */
+    background-color: aquamarine;
     color: white;
     position: fixed;
     padding: 0.8rem 1rem;
@@ -31,6 +32,9 @@
 }
 .navLink {
   margin-top: 10px;
+}
+.navLink li {
+    text-decoration: none;
 }
 
 .ticNav #ticMenu {

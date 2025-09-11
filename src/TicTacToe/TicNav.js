@@ -9,7 +9,10 @@ const TicNav = () => {
 
     function openMenu () {
         setShowNav(true);
-        
+    }
+
+    function restartGame() {
+      window.location.reload();
     }
 
   return (
@@ -19,14 +22,13 @@ const TicNav = () => {
           <li id="ticMenu">{showNav ? <IoMdClose onClick={()=> setShowNav(false)}/>   :   <IoMdMenu onClick={openMenu}/>}</li>
     {showNav && 
           <div className='navLink'>
-            {/* <li > <Link to={"/Player1 vs Player2"}>Player1 vs Player2</Link> </li> */}
                 <Link to={"/"}>
-            <li > Player1 vs Player2 </li>
+            <li onClick={() => setShowNav(false)} > Player1 vs Player2 </li>
                 </Link> 
                 <Link to={"/Player-vs-Computer"}>
-            <li > Player vs Computer</li>
+            <li onClick={() => setShowNav(false)} > Player vs Computer</li>
                 </Link>
-            <li>Restart</li>
+            <li onClick={restartGame}>Restart</li>
           </div>
     }
         </ul>

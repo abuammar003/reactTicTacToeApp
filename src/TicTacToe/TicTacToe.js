@@ -1,6 +1,7 @@
 import React, { useEffect, useState  } from "react";
 import "./TicTacToe.css";
 
+
 function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(""));
   const [move, setMove] = useState("X");
@@ -90,23 +91,28 @@ function TicTacToe() {
       <h1>Tic Tac Toe</h1>
  
         <div className="winScore">
-            <h3 className="player1">Player1 <br/> <span >{score.player1}</span></h3>
+            <div>
+              <h3 className="player1">  X </h3>
+              <h5 >{score.player1}</h5>
+              </div>
             <h1>Vs</h1>
-            <h3 className="player2">Player2 <br/> <span >{score.player2}</span></h3>
+            <div>
+              <h3 className="player2"> O </h3>
+             <h5 >{score.player2}</h5></div>
         </div>
 
 
       <table>
-        <tbody>
           {winner ? (
             <div className="winDeclare">
-              <h1> Congratultion! </h1>
-              <h3>Winner: {winner === "Draw" ? "It's Draw" : `Winner: ${winner}`}</h3>
+              <h1>🎉 Congratultion! </h1>
+              <h3>Winner: {winner === "Draw" ? "It's Draw" : `${winner}`}</h3>
               <button onClick={handleReload}>New Game</button>
             </div>
           ) : (
             ""
           )}
+        <tbody>
           <tr>
             <td
               onClick={() => {

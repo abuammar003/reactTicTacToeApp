@@ -3,6 +3,8 @@
 
  import React, { useEffect, useState } from "react";
 import "./TicUserVsComp.css";
+import { FaUserCircle  } from "react-icons/fa";
+import { HiComputerDesktop } from "react-icons/hi2";
 
 function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -37,6 +39,8 @@ function TicTacToe() {
     if (checkWinner(newBoard)) {
       setWinner(move);
       updateScore(move);
+    }else if(newBoard.every((cell) => cell !== "")) {
+      setWinner("Draw")
     } else {
       setMove(move === "X" ? "O" : "X");
     }
@@ -102,34 +106,103 @@ useEffect(() => {
       <h1>Tic Tac Toe</h1>
 
         <div className="winScore">
-            <h3 className="userScore">Player <br/> <span >{score.player}</span></h3>
+            <h3 ><FaUserCircle className="userScore" /><br/> <span >{score.player}</span></h3>
             <h1>Vs</h1>
-            <h3 className="comScore">Computer <br/> <span >{score.computer}</span></h3>
+            <h3><HiComputerDesktop className="comScore"/><br/> <span >{score.computer}</span></h3>
         </div>
 
         <table>
       {winner && (
         <div className="winDeclare">
           <h1>🎉 Congratulation!</h1>
-          <h3>Winner: {winner}</h3>
+          <h3>Winner: {winner === "Draw" ? "It's Draw" : `${winner}`}</h3>
           <button onClick={handleReload}>Play Again</button>
         </div>
       )}
 
-        <tbody>
-          {[0, 3, 6].map((row) => (
-            <tr key={row}>
-              {[0, 1, 2].map((col) => {
-                const index = row + col;
-                return (
-                  <td key={index} onClick={() => handleClick(index)}>
-                    {board[index]}
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
-        </tbody>
+      <tbody>
+       <tr>
+            <td
+              onClick={() => {
+                handleClick(0);
+              }}
+            >
+              {" "}
+              {board[0]}{" "}
+            </td>
+            <td
+              onClick={() => {
+                handleClick(1);
+              }}
+            >
+              {" "}
+              {board[1]}{" "}
+            </td>
+            <td
+              onClick={() => {
+                handleClick(2);
+              }}
+            >
+              {" "}
+              {board[2]}{" "}
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              onClick={() => {
+                handleClick(3);
+              }}
+            >
+              {" "}
+              {board[3]}{" "}
+            </td>
+            <td
+              onClick={() => {
+                handleClick(4);
+              }}
+            >
+              {" "}
+              {board[4]}{" "}
+            </td>
+            <td
+              onClick={() => {
+                handleClick(5);
+              }}
+            >
+              {" "}
+              {board[5]}{" "}
+            </td>
+          </tr>
+          <tr>
+            <td
+              onClick={() => {
+                handleClick(6);
+              }}
+            >
+              {" "}
+              {board[6]}{" "}
+            </td>
+            <td
+              onClick={() => {
+                handleClick(7);
+              }}
+            >
+              {" "}
+              {board[7]}{" "}
+            </td>
+            <td
+              onClick={() => {
+                handleClick(8);
+              }}
+            >
+              {" "}
+              {board[8]}{" "}
+            </td>
+          </tr>
+      </tbody>
+
+
       </table>
 
       {winner ? <h2>Winner: {winner}</h2> : <h2>Next Move: {move}</h2>}
@@ -144,3 +217,25 @@ useEffect(() => {
 }
 
 export default TicTacToe;
+
+
+
+
+
+
+
+
+        // {/* <tbody>
+        //   {[0, 3, 6].map((row) => (
+        //     <tr key={row}>
+        //       {[0, 1, 2].map((col) => {
+        //         const index = row + col;
+        //         return (
+        //           <td key={index} onClick={() => handleClick(index)}>
+        //             {board[index]}
+        //           </td>
+        //         );
+        //       })}
+        //     </tr>
+        //   ))}
+        // </tbody> */}
