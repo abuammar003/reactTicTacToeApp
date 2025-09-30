@@ -22,12 +22,12 @@ const TicNav = () => {
           <li id="ticMenu">{showNav ? <IoMdClose onClick={()=> setShowNav(false)}/>   :   <IoMdMenu onClick={openMenu}/>}</li>
     {showNav && 
           <div className='navLink'>
-                <Link to={"/"}>
-            <li onClick={() => setShowNav(false)} > Player1 vs Player2 </li>
-                </Link> 
-                <Link to={"/Player-vs-Computer"}>
-            <li onClick={() => setShowNav(false)} > Player vs Computer</li>
-                </Link>
+                <li onClick={() => setShowNav(false)}>
+            <Link to={"/"} > Player1 vs Player2 </Link>
+                </li> 
+            <li onClick={() => setShowNav(false)} >
+                <Link to={"/Player-vs-Computer"}> Player vs Computer </Link>
+               </li>
             <li onClick={restartGame}>Restart</li>
           </div>
     }

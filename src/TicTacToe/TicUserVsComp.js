@@ -103,7 +103,7 @@ useEffect(() => {
         {move}
       </div>
 
-      <h1>Tic Tac Toe</h1>
+      <h1 className="main_heading">Tic Tac Toe</h1>
 
         <div className="winScore">
             <h3 ><FaUserCircle className="userScore" /><br/> <span >{score.player}</span></h3>
@@ -111,100 +111,25 @@ useEffect(() => {
             <h3><HiComputerDesktop className="comScore"/><br/> <span >{score.computer}</span></h3>
         </div>
 
-        <table>
-      {winner && (
-        <div className="winDeclare">
-          <h1>🎉 Congratulation!</h1>
-          <h3>Winner: {winner === "Draw" ? "It's Draw" : `${winner}`}</h3>
-          <button onClick={handleReload}>Play Again</button>
+      
+ <div className="board">
+
+          {board.map((cell, i) => (
+            <div key={i} className="cell" onClick={() => handleClick(i)}>
+              <span className={`move ${cell === "X" ? "xturn" : cell === "O" ? "oturn" : ""}`}>{cell}</span>
+            </div>
+          ))}
+
+          {winner && <div className="winDeclare">
+             <h1>🎉 <br /> Congratultion! </h1>
+             <h3>Winner: {winner === "Draw" ? "It's Draw" : `${winner}`}</h3>
+             <button onClick={handleReload}>New Game</button>
+           </div> }
+
         </div>
-      )}
-
-      <tbody>
-       <tr>
-            <td
-              onClick={() => {
-                handleClick(0);
-              }}
-            >
-              {" "}
-              {board[0]}{" "}
-            </td>
-            <td
-              onClick={() => {
-                handleClick(1);
-              }}
-            >
-              {" "}
-              {board[1]}{" "}
-            </td>
-            <td
-              onClick={() => {
-                handleClick(2);
-              }}
-            >
-              {" "}
-              {board[2]}{" "}
-            </td>
-          </tr>
-
-          <tr>
-            <td
-              onClick={() => {
-                handleClick(3);
-              }}
-            >
-              {" "}
-              {board[3]}{" "}
-            </td>
-            <td
-              onClick={() => {
-                handleClick(4);
-              }}
-            >
-              {" "}
-              {board[4]}{" "}
-            </td>
-            <td
-              onClick={() => {
-                handleClick(5);
-              }}
-            >
-              {" "}
-              {board[5]}{" "}
-            </td>
-          </tr>
-          <tr>
-            <td
-              onClick={() => {
-                handleClick(6);
-              }}
-            >
-              {" "}
-              {board[6]}{" "}
-            </td>
-            <td
-              onClick={() => {
-                handleClick(7);
-              }}
-            >
-              {" "}
-              {board[7]}{" "}
-            </td>
-            <td
-              onClick={() => {
-                handleClick(8);
-              }}
-            >
-              {" "}
-              {board[8]}{" "}
-            </td>
-          </tr>
-      </tbody>
 
 
-      </table>
-
+      <div className="footer">
       {winner ? <h2>Winner: {winner}</h2> : <h2>Next Move: {move}</h2>}
       <button onClick={handleReload} className="newGame">
         New Game
@@ -212,6 +137,8 @@ useEffect(() => {
       <p>
         @2024 Copyright : <span>AmmarShah</span>
       </p>
+      </div>
+
     </div>
   );
 }
@@ -220,6 +147,103 @@ export default TicTacToe;
 
 
 
+
+
+
+
+  // <table>
+  //     {winner && (
+  //       <div className="winDeclare">
+  //         <h1>🎉 Congratulation!</h1>
+  //         <h3>Winner: {winner === "Draw" ? "It's Draw" : `${winner}`}</h3>
+  //         <button onClick={handleReload}>Play Again</button>
+  //       </div>
+  //     )}
+
+  //     <tbody>
+  //      <tr>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(0);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[0]}{" "}
+  //           </td>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(1);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[1]}{" "}
+  //           </td>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(2);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[2]}{" "}
+  //           </td>
+  //         </tr>
+
+  //         <tr>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(3);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[3]}{" "}
+  //           </td>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(4);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[4]}{" "}
+  //           </td>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(5);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[5]}{" "}
+  //           </td>
+  //         </tr>
+  //         <tr>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(6);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[6]}{" "}
+  //           </td>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(7);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[7]}{" "}
+  //           </td>
+  //           <td
+  //             onClick={() => {
+  //               handleClick(8);
+  //             }}
+  //           >
+  //             {" "}
+  //             {board[8]}{" "}
+  //           </td>
+  //         </tr>
+  //     </tbody>
+
+
+  //     </table>
 
 
 
