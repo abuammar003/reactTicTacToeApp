@@ -213,6 +213,7 @@
   align-items: center;
   padding: 1rem;
   position: relative;
+  cursor: none;
 }
 
 .ticMain .main_heading {
@@ -269,7 +270,7 @@
 }
 
 .cell {
-    flex: 1 0 calc(31.33% - 8px);
+  flex: 1 0 calc(31.33% - 8px);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -279,10 +280,11 @@
   background-color: rgba(114, 32, 32, 0.363);
   color: aquamarine;
   transition: 0.2s;
+  position: relative;
 }
 
 .cell:hover {
-  background: #222;
+  background: #222222bb;
 }
 .cell h1 {
   margin: 0;            
@@ -291,8 +293,7 @@
 }
 .cell .move {
     font-size: clamp(35px, 5vw, 45px);
-    font-weight: 600;
-    line-height: 1;
+    /* font-weight: 600; */
     display: inline-block;
 }
 
